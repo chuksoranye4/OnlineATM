@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<h4>@ViewBag.Title.</h4>
+<h6>@ViewBag.TheMessage</h6>
+
+<address>
+    chuksoranye4@yahoo.com
+</address>
+<br />
+<h3>@ViewBag.myMessage</h3>
+<br />
+<address>
+    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>
+<div id="formSection">
+    @using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "post", InsertionMode = InsertionMode.Replace, UpdateTargetId = "formSection" }))
+    {
+        <textarea name="message"></textarea>
+        <button type="submit" value="Send">Send</button>
+    }
+</div>
+<br />
+<h3>@ViewBag.Message</h3>
+
+@section scripts{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+}

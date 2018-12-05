@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Quick Cash";
+}
+
+<h2>Quick Cash</h2>
+
+<div>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-1 col-md-offset-1">
+            <h5></h5>
+        </div>
+        <div class="col-md-5">
+            <span class="text-success text-bold">@ViewBag.Message</span>
+        </div>
+
+        <div class="col-md-1">
+            <a href="@Url.Action("QuickCashe","CheckingAccount")" class="btn btn-primary btn-lg">
+                <span class="glyphicon glyphicon-forward">Proceed...</span>
+            </a>
+        </div>
+        <div class="col-md-2">
+        </div>
+    </div>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")*@
+    @Html.ActionLink("Back to main page", "Index", "Home")
+</p>

@@ -1,0 +1,61 @@
+﻿@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Home Page";
+    //Layout = "myLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-6 margin-top-20-class">
+       <a href="@Url.Action("Withdrawal", "CheckingAccount")" class="btn btn-primary btn-block btn-lg">
+        <span class="glyphicon glyphicon-circle-arrow-down">Withdrawal</span>
+       </a>
+        <a href="@Url.Action("QuickCash","CheckingAccount")" class="btn btn-primary btn-block btn-lg">
+            <span class="glyphicon glyphicon-flash">Quick Cash $100</span>
+        </a>
+        <a href="@Url.Action("Details","CheckingAccount")" class="btn btn-primary btn-block btn-lg">
+            <span class="glyphicon glyphicon-question-sign">Balance Inquiry</span>
+        </a>
+    </div>
+
+    <div class="col-md-6 margin-top-20-class">
+        <a href="@Url.Action("ListHistory","Transaction")" class="btn btn-primary btn-block btn-lg">
+            <span class="glyphicon glyphicon-print">Print Statement</span>
+        </a>
+        <a href="@Url.Action("TransferFund","CheckingAccount")" class="btn btn-primary btn-block btn-lg">
+            <span class="glyphicon glyphicon-transfer">Transfer Funds</span>
+        </a>
+        <a href="@Url.Action("Deposit","Transaction",new {checkingAccountId = ViewBag.CheckingAccountId})" class="btn btn-primary btn-block btn-lg">
+            <span class="glyphicon glyphicon-circle-arrow-up">Deposits</span>
+        </a>
+    </div>
+ </div>
+
+@*You are using @Request.Browser.Browser 
+
+@{ var amounts = new List<decimal> { 100, 20.5m, -40, 275.99m };  }
+
+<ul>
+    @foreach (decimal amt in amounts)
+    {
+        <li>@formatAmount(amt)</li>
+        <text>plan text</text>
+}
+</ul>
+
+   @helper formatAmount(decimal amount)
+    {
+         var color = "green";
+         if(amount < 0)
+            {
+                color = "red";
+            }
+         <span style="color:@color">@string.Format("{0:C}",amount);</span>
+    }
+
+@{ 
+    var date = DateTime.Now.ToString();
+    string message = "your are welcome";
+}
+<h4>Today is @date, @message </h4>*@
